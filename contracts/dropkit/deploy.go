@@ -1,4 +1,4 @@
-package authority
+package dropkitContract
 
 import (
 	"context"
@@ -55,7 +55,7 @@ func Deploy() (string, string) {
 	auth.GasLimit = uint64(5000000)
 	auth.GasPrice = gasPrice
 
-	address, transaction, _, err = DeployAuthority(auth, quorumClient)
+	address, transaction, _, err = DeployDropkitContract(auth, quorumClient, accountAddress, accountAddress)
 	if err != nil {
 		log.Fatal(err)
 	}

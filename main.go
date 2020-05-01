@@ -1,10 +1,9 @@
-package main 
+package main
 
 import (
 	"log"
 
-	"github.com/DropKit/Require-Deployer/contracts/authority"
-	"github.com/DropKit/Require-Deployer/contracts/metaTable"
+	dropkit "github.com/DropKit/Require-Deployer/contracts/dropkit"
 	"github.com/spf13/viper"
 )
 
@@ -18,9 +17,6 @@ func init() {
 }
 
 func main() {
-	metaTableAddr, _ := metaTable.Deploy()
-	log.Print("MetaTable Address: " + metaTableAddr)
-
-	authorityAddr, _ := authority.Deploy()
-	log.Print("Auhority Address: " + authorityAddr)
+	dropkitAddress, _ := dropkit.Deploy()
+	log.Print("DropKit contract address: " + dropkitAddress)
 }
